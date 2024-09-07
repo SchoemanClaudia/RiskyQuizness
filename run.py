@@ -2,6 +2,15 @@
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
+import requests
+
+# URL's for different difficulty API levels - https://www.dataquest.io/blog/python-api-tutorial/
+# Open Trivia Database: https://opentdb.com/
+API_LEVELS = {
+    "1": "https://opentdb.com/api.php?amount=40&category=11&difficulty=easy&type=multiple",
+    "2": "https://opentdb.com/api.php?amount=40&category=11&difficulty=medium&type=multiple",
+    "3": "https://opentdb.com/api.php?amount=40&category=11&difficulty=hard&type=multiple"
+}
 
 # Chosen difficulty levels returned with user input
 LEVEL_DIFFICULTY = {
@@ -9,6 +18,7 @@ LEVEL_DIFFICULTY = {
     "2": "MEDIUM",
     "3": "HARD"
 }
+
 
 def get_level(prompt, valid_options):
     """
