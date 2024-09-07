@@ -3,6 +3,13 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
 
+# Chosen difficulty levels returned with user input
+LEVEL_DIFFICULTY = {
+    "1": "EASY",
+    "2": "MEDIUM",
+    "3": "HARD"
+}
+
 def get_level(prompt, valid_options):
     """
     Prompt the user for level selection,
@@ -14,7 +21,7 @@ def get_level(prompt, valid_options):
             return user_input
         # Pull valid options from get_level to assist user input
         else:
-            print(f"Invalid input! Please enter one of the following: {', '.join(valid_options)}.")
+            print(f"INVALID INPUT!\nPlease enter one of the following: {', '.join(valid_options)}.\n")
         
 
 def main_menu():
@@ -27,14 +34,15 @@ def main_menu():
     print("Let's test your knowledge with 10 randomised multiple choice questions.\n")
 
     # User to enter their name
-    player_name = input("What is your name:\n").strip().title()
-    print("\n")
+    player_name = input("Before we get started, type your name:\n").strip().title()
 
     # Introduce user to quiz and select difficulty level (1, 2, or 3)
     difficulty = get_level(
         f"Select a difficulty level: (Easy = 1, Medium = 2, Hard = 3)\n",
         ['1', '2', '3']
     )
-    
+    chosen_level = LEVEL_DIFFICULTY[difficulty]
+    print(f"\n{player_name}, you have selected {chosen_level} difficulty.\n")
+
 
 main_menu()
