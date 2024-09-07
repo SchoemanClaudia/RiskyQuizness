@@ -12,6 +12,9 @@ def get_level(prompt, valid_options):
         user_input = input(prompt)
         if user_input in valid_options:
             return user_input
+        # Pull valid options from get_level to assist user input
+        else:
+            print(f"Invalid input! Please enter one of the following: {', '.join(valid_options)}.")
         
 
 def main_menu():
@@ -20,7 +23,8 @@ def main_menu():
     user enters name and selects quiz difficulty
     """
     print("*** Risky Quizness ***\n")
-    print("Welcome to our film trivia")
+    print("Welcome to our film trivia, are you a true film buff?")
+    print("Let's test your knowledge with 10 randomised multiple choice questions.\n")
 
     # User to enter their name
     player_name = input("What is your name:\n").strip().title()
@@ -28,8 +32,7 @@ def main_menu():
 
     # Introduce user to quiz and select difficulty level (1, 2, or 3)
     difficulty = get_level(
-        f"Tell us {player_name}, are you a true film buff?\n\n"
-        f"Select a difficulty level to find out: (Easy = 1, Medium = 2, Hard = 3)\n",
+        f"Select a difficulty level: (Easy = 1, Medium = 2, Hard = 3)\n",
         ['1', '2', '3']
     )
     
