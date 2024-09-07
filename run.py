@@ -19,6 +19,16 @@ LEVEL_DIFFICULTY = {
     "3": "HARD"
 }
 
+def load_questions(difficulty):
+    """
+    Load questions from API database,
+    based on the user chosen difficulty
+    """
+    url = API_LEVELS.get(difficulty)
+    response = requests.get(url)
+    if response.status_code == 200:
+        return response.json()["results"]
+
 
 def get_level(prompt, valid_options):
     """
@@ -53,6 +63,10 @@ def main_menu():
     )
     chosen_level = LEVEL_DIFFICULTY[difficulty]
     print(f"\n{player_name}, you have selected {chosen_level} difficulty.\n")
+
+    # Load questions for the chosen difficulty level
+    questions = load_questions(difficulty)
+    print(questions)
 
 
 main_menu()
