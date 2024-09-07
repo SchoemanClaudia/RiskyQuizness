@@ -38,6 +38,7 @@ def display_questions(question_data, index):
     Display and format questions and answer choices,
     includes correct and incorrect answers
     """
+    # https://stackoverflow.com/questions/2087370/decode-html-entities-in-python-string
     question = html.unescape(question_data['question'])
     correct_answer = html.unescape(question_data['correct_answer'])
     incorrect_answers = [html.unescape(ans) for ans in question_data['incorrect_answers']]
@@ -98,6 +99,12 @@ def game_loop():
 
         # Loop through quiz after player answers each question with valid input
         player_answer = get_input("Your answer (1-4): ", ['1', '2', '3', '4'])
+
+        # Validate if player_answer is correct
+        if all_answers[int(player_answer) - 1] == correct_answer:
+            print(f"Correct, {player_name}!\n")
+        else:
+            print(f"Oops! The correct answer is: {correct_answer}\n")
 
 
 game_loop()
