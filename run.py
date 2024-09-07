@@ -3,6 +3,7 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
 import requests
+import random
 
 # URL's for different difficulty API levels - https://www.dataquest.io/blog/python-api-tutorial/
 # Open Trivia Database: https://opentdb.com/
@@ -18,6 +19,7 @@ LEVEL_DIFFICULTY = {
     "2": "MEDIUM",
     "3": "HARD"
 }
+
 
 def load_questions(difficulty):
     """
@@ -42,7 +44,7 @@ def get_level(prompt, valid_options):
         # Pull valid options from get_level to assist user input
         else:
             print(f"INVALID INPUT!\nPlease enter one of the following: {', '.join(valid_options)}.\n")
-        
+
 
 def main_menu():
     """
@@ -66,7 +68,10 @@ def main_menu():
 
     # Load questions for the chosen difficulty level
     questions = load_questions(difficulty)
-    print(questions)
+
+    # Display 10 randomised questions only, from the level selected (40 per difficulty)
+    selected_questions = random.sample(questions, 10)
+    print(selected_questions)
 
 
 main_menu()
