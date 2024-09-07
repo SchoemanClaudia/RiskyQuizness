@@ -32,6 +32,26 @@ def load_questions(difficulty):
         return response.json()["results"]
 
 
+def display_questions(question_data, index):
+    """
+    Display and format questions and answer choices,
+    includes correct and incorrect answers
+    """
+    question = question_data['question']
+    correct_answer = question_data['correct_answer']
+    incorrect_answers = question_data['incorrect_answers']
+
+    all_answers = incorrect_answers + [correct_answer]
+
+    # Format display of each question and the choices individually
+    print(f"Question {index + 1}: {question}")
+    for i in range(len(all_answers)):
+        answer = all_answers[i]
+        print(f"{i + 1}. {answer}")
+
+    return correct_answer, all_answers
+
+
 def get_level(prompt, valid_options):
     """
     Prompt the user for level selection,
@@ -71,7 +91,9 @@ def game_loop():
 
     # Display 10 randomised questions only, from the level selected (40 per difficulty)
     selected_questions = random.sample(questions, 10)
-    print(selected_questions)
+    for question_index in range(len(selected_questions)):
+        question_data = selected_questions[question_index]
+        correct_answer, all_answers = display_questions(question_data, question_index)
 
 
 game_loop()
