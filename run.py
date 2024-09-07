@@ -4,6 +4,7 @@
 
 import requests
 import random
+import html
 
 # URL's for different difficulty API levels - https://www.dataquest.io/blog/python-api-tutorial/
 # Open Trivia Database: https://opentdb.com/
@@ -37,9 +38,9 @@ def display_questions(question_data, index):
     Display and format questions and answer choices,
     includes correct and incorrect answers
     """
-    question = question_data['question']
-    correct_answer = question_data['correct_answer']
-    incorrect_answers = question_data['incorrect_answers']
+    question = html.unescape(question_data['question'])
+    correct_answer = html.unescape(question_data['correct_answer'])
+    incorrect_answers = [html.unescape(ans) for ans in question_data['incorrect_answers']]
 
     all_answers = incorrect_answers + [correct_answer]
 
