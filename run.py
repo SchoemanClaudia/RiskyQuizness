@@ -46,7 +46,7 @@ def get_level(prompt, valid_options):
             print(f"INVALID INPUT!\nPlease enter one of the following: {', '.join(valid_options)}.\n")
 
 
-def main_menu():
+def game_loop():
     """
     Run welcome screen to main menu,
     user enters name and selects quiz difficulty
@@ -74,4 +74,4 @@ def main_menu():
     print(selected_questions)
 
 
-main_menu()
+game_loop()
