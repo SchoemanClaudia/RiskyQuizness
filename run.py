@@ -91,6 +91,9 @@ def game_loop():
     # Load questions for the chosen difficulty level
     questions = load_questions(difficulty)
 
+    # Start score counter at 0
+    player_score = 0
+
     # Display 10 randomised questions only, from the level selected (40 per difficulty)
     selected_questions = random.sample(questions, 10)
     for question_index in range(len(selected_questions)):
@@ -103,8 +106,12 @@ def game_loop():
         # Validate if player_answer is correct
         if all_answers[int(player_answer) - 1] == correct_answer:
             print(f"Correct, {player_name}!\n")
+            player_score += 1
         else:
             print(f"Oops! The correct answer is: {correct_answer}\n")
+    
+    # Calculate player score after all 10 quiz questions completed
+    print(f"{player_name}, your film trivia score is {player_score} out of 10")
 
 
 game_loop()
