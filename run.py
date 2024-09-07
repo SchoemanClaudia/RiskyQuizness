@@ -52,7 +52,7 @@ def display_questions(question_data, index):
     return correct_answer, all_answers
 
 
-def get_level(prompt, valid_options):
+def get_input(prompt, valid_options):
     """
     Prompt the user for level selection,
     makes sure user input is a valid selection
@@ -61,7 +61,7 @@ def get_level(prompt, valid_options):
         user_input = input(prompt)
         if user_input in valid_options:
             return user_input
-        # Pull valid options from get_level to assist user input
+        # Pull valid options from get_level and to assist user input
         else:
             print(f"INVALID INPUT!\nPlease enter one of the following: {', '.join(valid_options)}.\n")
 
@@ -79,7 +79,7 @@ def game_loop():
     player_name = input("Before we get started, type your name:\n").strip().title()
 
     # Introduce user to quiz and select difficulty level (1, 2, or 3)
-    difficulty = get_level(
+    difficulty = get_input(
         f"Select a difficulty level: (Easy = 1, Medium = 2, Hard = 3)\n",
         ['1', '2', '3']
     )
@@ -94,6 +94,9 @@ def game_loop():
     for question_index in range(len(selected_questions)):
         question_data = selected_questions[question_index]
         correct_answer, all_answers = display_questions(question_data, question_index)
+
+        # Loop through quiz after player answers each question with valid input
+        player_answer = get_input("Your answer (1-4): ", ['1', '2', '3', '4'])
 
 
 game_loop()
