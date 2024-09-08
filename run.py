@@ -111,7 +111,16 @@ def game_loop():
             print(f"Oops! The correct answer is: {correct_answer}\n")
     
     # Calculate player score after all 10 quiz questions completed
-    print(f"{player_name}, your film trivia score is {player_score} out of 10")
+    print(f"Your film trivia score is {player_score}/10")
+
+    # Gives player feedback based on their final score
+    if player_score < 5:
+        print(f"Better luck next time, {player_name}! Not quite the film buff just yet.")
+    elif player_score >= 8:
+        print(f"Right down to Quizness, {player_name}! You're a true film buff!")
+    else:
+        # Score between 5 and 7
+        print(f"Not bad, {player_name}... you could brush up on your film knowledge.")
 
 
 game_loop()
