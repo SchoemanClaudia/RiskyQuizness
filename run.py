@@ -68,7 +68,7 @@ def get_input(prompt, valid_options):
     makes sure user input is a valid selection
     """
     while True:
-        user_input = input(prompt)
+        user_input = input(prompt).strip()
         if user_input in valid_options:
             return user_input
         # Pull valid options from get_level and to assist user input
