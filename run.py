@@ -72,17 +72,20 @@ def get_input(prompt, valid_options):
             print(f"Enter one of the following: {', '.join(valid_options)}.\n")
 
 
-def game_loop():
+def game_loop(player_name=None):
     """
     Run welcome screen to main menu,
-    user enters name and selects quiz difficulty
+    user enters name and selects quiz difficulty.
+    Modify by adding player_name=None, to accept player_name
+    allowing quiz to retain the player_name if replaying
+    https://stackoverflow.com/questions/47840794/none-in-python
     """
-    print("*** Risky Quizness ***\n")
-    print("Welcome to our film trivia, are you a true film buff?")
-    print("Test your knowledge with 10 multiple choice questions.\n")
-
-    # User to enter their name
-    player_name = input("Let's start, what is your name?\n").strip().title()
+    if not player_name:
+        print("*** Risky Quizness ***\n")
+        print("Welcome to our film trivia, are you a true film buff?")
+        print("Test your knowledge with 10 multiple choice questions.\n")
+        # User to enter their name
+        player_name = input("What is your name?\n").strip().title()
 
     # Introduce user to quiz and select difficulty level (1, 2, or 3)
     difficulty = get_input(
@@ -144,7 +147,7 @@ def game_loop():
     elif play_again == '2':
         game_loop()
     else:
-        print(f"Goodbye {player_name}, thank you for playing")
+        print(f"Goodbye {player_name}, thank you for playing.")
 
 
 # Initial quiz launch
