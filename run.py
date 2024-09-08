@@ -54,7 +54,7 @@ def display_questions(question_data, index):
     random.shuffle(all_answers)
 
     # Format display of each question and the choices individually
-    print(f"Question {index + 1}: {question}")
+    print(f"Question {index + 1}:\n{question}")
     for i in range(len(all_answers)):
         answer = all_answers[i]
         print(f"{i + 1}. {answer}")
@@ -73,7 +73,7 @@ def get_input(prompt, valid_options):
             return user_input
         # Pull valid options from get_level and to assist user input
         else:
-            print(f"INVALID INPUT!\n")
+            print(f"\nINVALID INPUT!")
             print(f"Enter one of the following: {', '.join(valid_options)}.\n")
 
 
@@ -90,15 +90,15 @@ def game_loop(player_name=None):
         print("Welcome to our film trivia, are you a true film buff?")
         print("Test your knowledge with 10 multiple choice questions.\n")
         # User to enter their name
-        player_name = input("What is your name?\n").strip().title()
+        player_name = input("Firstly, what is your name?\n").strip().title()
 
     # Introduce user to quiz and select difficulty level (1, 2, or 3)
     difficulty = get_input(
-        f"Select a difficulty level: (Easy = 1, Medium = 2, Hard = 3)\n",
+        f"\nSelect a difficulty level:\n1. Easy\n2. Medium\n3. Hard\n",
         ['1', '2', '3']
     )
     chosen_level = LEVEL_DIFFICULTY[difficulty]
-    print(f"\n{player_name}, you have selected {chosen_level} difficulty.\n")
+    print(f"\n{player_name}, you have opted for {chosen_level}.\n")
 
     # Load questions for the chosen difficulty level
     questions = load_questions(difficulty)
@@ -116,17 +116,17 @@ def game_loop(player_name=None):
         )
 
         # Loop through quiz after player answers each question with valid input
-        player_answer = get_input("Your answer (1-4): ", ['1', '2', '3', '4'])
+        player_answer = get_input("\n--> Answer (1-4): ", ['1', '2', '3', '4'])
 
         # Validate if player_answer is correct
         if all_answers[int(player_answer) - 1] == correct_answer:
-            print(f"Correct {player_name}!\n")
+            print(f"--> Correct {player_name}!\n")
             player_score += 1
         else:
-            print(f"Oops! The correct answer is: {correct_answer}\n")
+            print(f"--> Oops! The correct answer is: {correct_answer}\n")
 
     # Calculate player score after all 10 quiz questions completed
-    print(f"{player_name}, your film trivia score is {player_score}/10")
+    print(f"*** {player_name}, your score is {player_score}/10 ***")
 
     # Gives player feedback based on their final score
     if player_score < 5:
@@ -142,7 +142,7 @@ def game_loop(player_name=None):
 # 2 = take quiz as a new player_name
 # 3 = exit the quiz
     play_again = get_input(
-        "Want to try again?\n(New Quiz = 1, New player = 2, Exit = 3):\n",
+        "Want to try again?\n1. New Quiz\n2. New player\n3. Exit\n",
         ['1', '2', '3']
     )
     # Same player takes quiz
@@ -152,7 +152,7 @@ def game_loop(player_name=None):
     elif play_again == '2':
         game_loop()
     else:
-        print(f"Goodbye {player_name}, thank you for playing.")
+        print(f"*** Goodbye {player_name}, thank you for playing ***")
 
 
 # Initial quiz launch
