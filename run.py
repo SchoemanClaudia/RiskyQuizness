@@ -48,6 +48,11 @@ def display_questions(question_data, index):
 
     all_answers = incorrect_answers + [correct_answer]
 
+    # Shuffle mutliple choice correct + incorrect answers
+    # randomises each correct answer per question fetched
+    # https://www.geeksforgeeks.org/random-shuffle-function-in-python/
+    random.shuffle(all_answers)
+
     # Format display of each question and the choices individually
     print(f"Question {index + 1}: {question}")
     for i in range(len(all_answers)):
