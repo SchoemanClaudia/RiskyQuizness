@@ -1,32 +1,149 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Risky Quizness
 
-Welcome,
+xxx
+Live Link: https://risky-quizness-c9032af3d3e3.herokuapp.com/
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **May 14, 2024**
+![Responsive Mock-up](assets/images/responsive-mockup.webp)
 
-## Reminders
 
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
 
-## Creating the Heroku app
+## Game Scope
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+### Overview
 
-1. `heroku/python`
-2. `heroku/nodejs`
+- xxxx
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+### How to play
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+- xxxx
 
-Connect your GitHub repository and deploy as normal.
+### Features
 
-## Constraints
+__Existing features:__
+- xx
+- xx
+  - xx
+  - xx
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+__Future Features__
+- xx
+- xx
+  - xx
+  - xx
 
----
+## Solution Model
 
-Happy coding!
+### Flowchart
+
+![Flowchart](assets/images/flowchart.webp)
+
+
+### Future Features to Implement
+
+- xxx
+  - xxx
+  - xxx
+- xxx
+
+### Future Model
+
+__Future feature flowchart model__
+  - xxxx
+
+![Future Model Flowchart](assets/images/future-model.webp)
+
+
+## Testing 
+
+-   xxx
+
+
+## Technologies Used
+
+### Languages
+
+- HTML5
+- CSS3
+- Python
+
+### Other Sites
+
+- Quiz Trivia API:
+  - xxx: xxx
+
+- Assisted problem solving sites:
+  - xxx: xxx
+
+### Validator Testing 
+
+- xxx
+  - xxx:
+    - xxx
+    - xxx
+
+  - After fixing above attributes, no errors were found when running the code through the [xx](xxx)
+
+![Screenshot of errors](assets/images/error.webp)
+
+### Bugs Encountered
+
+- xxx
+  - xxx
+- xxx
+  - xxx
+
+![xx](assets/images/xx.webp)
+![xx](assets/images/xx.webp)
+
+### Unfixed Bugs
+
+- No unfixed bugs, [xx](xx) returned with no errors.
+
+![Final Result](assets/images/result.webp)
+
+
+## Deployment
+
+### Heroku
+- The site was deployed to Heroku as follows:
+  - Log into Heroku or create an account if you don't already have one.
+  - Click 'New' from the top right of the screen.
+  - Select 'Create new app'.
+  - Enter a unique application name - select appropriate region.
+  - Click 'Create app'
+  - One the following page, click the 'Settings' tab and scroll to Config Vars.
+  - In the KEY input field, enter 'PORT' and in the VALUE input field, enter '8000'.
+  - Click 'Add'.
+  - On the same page, scroll down to buildpacks and add two buildpacks.
+  - The ordering for these is heroku/python followed by heroku/nodejs.
+  - At the top of the page, click 'Deploy'.
+  - Select Github as the deployment method.
+  - Search for and select correct repository and click 'Connect'.
+  - At the bottom of the same page, select either Automatic Deployment or Manual Deployment
+  - Wait for your site to be deployed.
+- The site was deployed to Heroku, the live link can be found here: https://risky-quizness-c9032af3d3e3.herokuapp.com/
+
+### Cloning of the Repository Code locally
+- The terminal function and template for the deployable application was provided by Code Institute
+  - Go to the Github repository that you want to clone
+  - Click on the Code button located above all the project files
+  - Click on HTTPS and copy the repository link
+  - Open the IDE of your choice and paste the copied git url into the IDE terminal
+  - The project is now created as a local clone
+
+### Version Control
+- The quiz was created using Gitpod editor and pushed to Github to the remote repository 'RiskyQuizness'
+- Git commands were used throughout the development to push the code to the remote repository. 
+- The following git commands were used:
+  - git add . - to add the files to the staging area before being committed
+  - git commit -m "commit message" - to commit changes to the local repository queue that are ready for the final step
+  - git push - to push all committed code to the remote repository on Github
+  - pip3 install imports for python library assistance
+
+
+## Credits 
+
+- Slack channel learn-python peers
+- Slack channel peer-code-review for their feedback and taking the time to look at Risky Quizness with fresh eyes
+- My mentor for the support and knowledge shared, which has been invaluable during our mentor calls
+- Tutor Assist
