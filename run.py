@@ -1,6 +1,6 @@
 import sys
-sys.path.append("/usr/local/lib/python3.9/site-packages")
-import requests 
+sys.path.append("/home/gitpod/.pyenv/versions/3.12.2/lib/python3.12/site-packages")
+import requests
 import random
 import html
 
