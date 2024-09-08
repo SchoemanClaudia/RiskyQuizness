@@ -26,8 +26,13 @@ def load_questions(difficulty):
     """
     url = API_LEVELS.get(difficulty)
     response = requests.get(url)
+    # Imports the requests module
     if response.status_code == 200:
         return response.json()["results"]
+    else:
+        # Feedback if quiz API doesn't load initially
+        print("Error loading the quiz questions, please reload page.")
+        return []
 
 
 def display_questions(question_data, index):
@@ -74,7 +79,7 @@ def get_input(prompt, valid_options):
         # Pull valid options from get_level and to assist user input
         else:
             print(f"\nINVALID INPUT!")
-            print(f"Enter one of the following: {', '.join(valid_options)}.\n")
+            print(f"Enter one of the following: {', '.join(valid_options)}.")
 
 
 def game_loop(player_name=None):
@@ -102,6 +107,9 @@ def game_loop(player_name=None):
 
     # Load questions for the chosen difficulty level
     questions = load_questions(difficulty)
+    # Exit and stop quiz if no questions load from API
+    if not questions:
+        return
 
     # Start score counter at 0
     player_score = 0
