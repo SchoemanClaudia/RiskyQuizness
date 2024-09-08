@@ -1,1 +1,1 @@
-# Your requirements go here
+requests==2.32.2
