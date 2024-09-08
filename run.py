@@ -122,12 +122,31 @@ def game_loop():
 
     # Gives player feedback based on their final score
     if player_score < 5:
-        print(f"Better luck next time! Not quite the film buff just yet.")
+        print(f"Better luck next time! Not quite the film buff just yet.\n")
     elif player_score >= 8:
-        print(f"Right down to Quizness! You're a true film buff!")
+        print(f"Right down to Quizness... you're a true film buff!\n")
     else:
         # Score between 5 and 7
-        print(f"Not bad, you could brush up on your film knowledge.")
+        print(f"Not bad, you could brush up on your film knowledge.\n")
+
+# Give user options:
+# 1 = take another quiz as the same player_name
+# 2 = take quiz as a new player_name
+# 3 = exit the quiz
+    play_again = get_input(
+        "Want to try again?\n(New Quiz = 1, New player = 2, Exit = 3):\n",
+        ['1', '2', '3']
+    )
+    # Same player takes quiz
+    if play_again == '1':
+        game_loop(player_name)
+    # New player takes quiz
+    elif play_again == '2':
+        game_loop()
+    else:
+        print(f"Goodbye {player_name}, thank you for playing")
 
 
-game_loop()
+# Initial quiz launch
+if __name__ == "__main__":
+    game_loop()
