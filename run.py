@@ -1,10 +1,9 @@
-import sys
-sys.path.append("/home/gitpod/.pyenv/versions/3.12.2/lib/python3.12/site-packages")
 import requests
 import random
 import html
 
-# URL's for different difficulty API levels - https://www.dataquest.io/blog/python-api-tutorial/
+# URL's for different difficulty API levels
+# https://www.dataquest.io/blog/python-api-tutorial/
 # Open Trivia Database: https://opentdb.com/
 API_LEVELS = {
     "1": "https://opentdb.com/api.php?amount=40&category=11&difficulty=easy&type=multiple",
@@ -36,10 +35,16 @@ def display_questions(question_data, index):
     Display and format questions and answer choices,
     includes correct and incorrect answers
     """
-    # https://stackoverflow.com/questions/2087370/decode-html-entities-in-python-string
-    question = html.unescape(question_data['question'])
-    correct_answer = html.unescape(question_data['correct_answer'])
-    incorrect_answers = [html.unescape(ans) for ans in question_data['incorrect_answers']]
+    # stackoverflow.com/questions/2087370/decode-html-entities-in-python-string
+    question = html.unescape(
+        question_data['question']
+    )
+    correct_answer = html.unescape(
+        question_data['correct_answer']
+    )
+    incorrect_answers = [
+        html.unescape(ans) for ans in question_data['incorrect_answers']
+    ]
 
     all_answers = incorrect_answers + [correct_answer]
 
@@ -63,7 +68,8 @@ def get_input(prompt, valid_options):
             return user_input
         # Pull valid options from get_level and to assist user input
         else:
-            print(f"INVALID INPUT!\nPlease enter one of the following: {', '.join(valid_options)}.\n")
+            print(f"INVALID INPUT!\n")
+            print(f"Enter one of the following: {', '.join(valid_options)}.\n")
 
 
 def game_loop():
@@ -73,10 +79,10 @@ def game_loop():
     """
     print("*** Risky Quizness ***\n")
     print("Welcome to our film trivia, are you a true film buff?")
-    print("Let's test your knowledge with 10 randomised multiple choice questions.\n")
+    print("Test your knowledge with 10 multiple choice questions.\n")
 
     # User to enter their name
-    player_name = input("Before we get started, type your name:\n").strip().title()
+    player_name = input("Let's start, what is your name?\n").strip().title()
 
     # Introduce user to quiz and select difficulty level (1, 2, or 3)
     difficulty = get_input(
@@ -92,33 +98,36 @@ def game_loop():
     # Start score counter at 0
     player_score = 0
 
-    # Display 10 randomised questions only, from the level selected (40 per difficulty)
+    # Display 10 randomised questions only, from the level selected
+    # 40 questions fetched per difficulty level
     selected_questions = random.sample(questions, 10)
     for question_index in range(len(selected_questions)):
         question_data = selected_questions[question_index]
-        correct_answer, all_answers = display_questions(question_data, question_index)
+        correct_answer, all_answers = display_questions(
+            question_data, question_index
+        )
 
         # Loop through quiz after player answers each question with valid input
         player_answer = get_input("Your answer (1-4): ", ['1', '2', '3', '4'])
 
         # Validate if player_answer is correct
         if all_answers[int(player_answer) - 1] == correct_answer:
-            print(f"Correct, {player_name}!\n")
+            print(f"Correct {player_name}!\n")
             player_score += 1
         else:
             print(f"Oops! The correct answer is: {correct_answer}\n")
-    
+
     # Calculate player score after all 10 quiz questions completed
-    print(f"Your film trivia score is {player_score}/10")
+    print(f"{player_name}, your film trivia score is {player_score}/10")
 
     # Gives player feedback based on their final score
     if player_score < 5:
-        print(f"Better luck next time, {player_name}! Not quite the film buff just yet.")
+        print(f"Better luck next time! Not quite the film buff just yet.")
     elif player_score >= 8:
-        print(f"Right down to Quizness, {player_name}! You're a true film buff!")
+        print(f"Right down to Quizness! You're a true film buff!")
     else:
         # Score between 5 and 7
-        print(f"Not bad, {player_name}... you could brush up on your film knowledge.")
+        print(f"Not bad, you could brush up on your film knowledge.")
 
 
 game_loop()
