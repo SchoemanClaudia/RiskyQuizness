@@ -2,6 +2,8 @@ import requests
 import random
 import html
 import colorama
+from colorama import init
+init()
 from colorama import Fore, Back, Style
 
 
