@@ -1,6 +1,9 @@
 # Risky Quizness
 
-xxx
+It all started with a pub quiz night, it was loud and the screens were small. Our team couldn't see the quiz questions given the position of our table and often we missed out on hearing the questions correctly. When it came to marking our pen and paper game sheets, we relied on opposing teams to accuratley check our answers with what the quiz master had shouted out and hoped we had scored enough points to win a prize at the end of the night. It got me thinking about how I would improve this experience to make it easier for the players within each team while enjoying the pub atmosphere.
+
+This app has been developed as a prototype for a company called Risky Quizness, who host pub quiz games and are looking to go digital with their game nights. The idea is to allow each team to independently keep track of their questions, answers and score tally as the night progresses, and in turn streamlining the final score system for team competition progression and end of night prizes. With this prototype, Risky Quizness will be able to rotate their quiz questions automatically by fetching randomised themed questions for each round played. 
+
 Live Link: https://risky-quizness-c9032af3d3e3.herokuapp.com/
 
 ![Responsive Mock-up](assets/images/responsive-mockup.webp)
@@ -11,7 +14,10 @@ Live Link: https://risky-quizness-c9032af3d3e3.herokuapp.com/
 
 ### Overview
 
-- xxxx
+- This version of the app allows each team to answer 10 multiple choice questions, with each question immediately validated.
+- As the teams progress through the quiestions and levels, their points / score is kept track of. 
+- When teams have completed answering all questions their final score is presented to them.
+- Players then have the option to continue playing, play as a new team or finish their quiz journey.
 
 ### How to play
 
