@@ -2,8 +2,6 @@ import requests
 import random
 import html
 import colorama
-from colorama import init
-init()
 from colorama import Fore, Back, Style
 
 
@@ -11,18 +9,18 @@ from colorama import Fore, Back, Style
 # https://www.dataquest.io/blog/python-api-tutorial/
 # Open Trivia Database: https://opentdb.com/
 API_LEVELS = {
-     "1": (
+    "1": (
         "https://opentdb.com/api.php?amount=40&category=11&"
         "difficulty=easy&type=multiple"
-    ),
+        ),
     "2": (
         "https://opentdb.com/api.php?amount=40&category=11&"
         "difficulty=medium&type=multiple"
-    ),
+        ),
     "3": (
         "https://opentdb.com/api.php?amount=40&category=11&"
         "difficulty=hard&type=multiple"
-    )
+        )
 }
 
 # Chosen difficulty levels returned with user input
@@ -94,7 +92,7 @@ def get_input(prompt, valid_options):
             return user_input
         # Pull valid options from get_level and to assist user input
         else:
-            print(Back.YELLOW + f"\nINVALID INPUT!")
+            print(Fore.BLACK + Back.YELLOW + f"\nINVALID INPUT!")
             print(Style.RESET_ALL)
             print(f"Enter one of the following: {', '.join(valid_options)}.")
 
@@ -113,7 +111,8 @@ def game_loop(team_name=None):
         print("Welcome to our film trivia, are you a true film buff?")
         print("Test your knowledge with 10 multiple choice questions.\n")
         # User to enter their name
-        team_name = input(Fore.CYAN + "What is your team name?\n").strip().title()
+        team_name = input(
+            Fore.CYAN + "What is your team name?\n").strip().title()
         print(Style.RESET_ALL)
 
     # Introduce user to quiz and select difficulty level (1, 2, or 3)
@@ -143,7 +142,7 @@ def game_loop(team_name=None):
             question_data, question_index
         )
 
-        # Loop through quiz after player answers each question with valid input
+        # Loop through quiz after player ans each question with valid input
         team_answer = get_input("\n--> Answer (1-4): ", ['1', '2', '3', '4'])
 
         # Validate if team_answer is correct
@@ -152,7 +151,7 @@ def game_loop(team_name=None):
             print(Style.RESET_ALL)
             team_score += 1
         else:
-            print(Fore.RED + f"--> Oops! The correct answer is: {correct_answer}\n")
+            print(Fore.RED + f"--> Oops! The answer is: {correct_answer}\n")
             print(Style.RESET_ALL)
 
     # Calculate player score after all 10 quiz questions completed
@@ -168,7 +167,7 @@ def game_loop(team_name=None):
         print(f"Not bad, you could brush up on your film knowledge.\n")
 
     print(Style.RESET_ALL)
-    
+
 # Give user options:
 # 1 = take another quiz as the same team_name
 # 2 = take quiz as a new team_name
@@ -184,7 +183,7 @@ def game_loop(team_name=None):
     elif play_again == '2':
         game_loop()
     else:
-        print(Fore.CYAN + f"*** Goodbye {team_name}, thank you for playing ***")
+        print(Fore.CYAN + f"*** See you soon {team_name} ***")
         print(Style.RESET_ALL)
 
 
