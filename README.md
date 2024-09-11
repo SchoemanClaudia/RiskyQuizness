@@ -58,10 +58,18 @@ __Existing features:__
   - If score greater than and equal to 8, "Right down to Quizness... you're a true film buff!"
 
 __Future Features__
-- xx
-- xx
-  - xx
-  - xx
+- Adding more trivia theme options, allowing players to choose their prefered trivia theme nights.
+- Build and continuously update a database of questions to keep up to date with themes.
+- Round progression with levelling up of theme difficulty.
+- Link a database that stores and updates automatically as all team names and scores are collected per pub quiz attended.
+  - With this Risky Quizness can gather informatioon of their top teams around the various pubs.
+    - Hold an ultimate quiz battle with top teams competing to take the top spot within their area.
+- Create another version of the app that allows users to host their own at home trivia nights.
+  - Downloadable app to smart devices that will:
+    - include a quiz master platform for the host to manage teams and gamplay
+    - players arena where teams have access similar to the prototyp platform to interact and answer questions.
+    - include mini quiz games for single players on the move to brush up on their quiz theme knowledge.
+- Bring in a few animated screens between rounds and questions for interactive fun during quiz game game play.
 
 ## Solution Model
 
