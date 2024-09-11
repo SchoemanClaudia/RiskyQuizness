@@ -8,9 +8,18 @@ from colorama import Fore, Back, Style
 # https://www.dataquest.io/blog/python-api-tutorial/
 # Open Trivia Database: https://opentdb.com/
 API_LEVELS = {
-    "1": "https://opentdb.com/api.php?amount=40&category=11&difficulty=easy&type=multiple",
-    "2": "https://opentdb.com/api.php?amount=40&category=11&difficulty=medium&type=multiple",
-    "3": "https://opentdb.com/api.php?amount=40&category=11&difficulty=hard&type=multiple"
+     "1": (
+        "https://opentdb.com/api.php?amount=40&category=11&"
+        "difficulty=easy&type=multiple"
+    ),
+    "2": (
+        "https://opentdb.com/api.php?amount=40&category=11&"
+        "difficulty=medium&type=multiple"
+    ),
+    "3": (
+        "https://opentdb.com/api.php?amount=40&category=11&"
+        "difficulty=hard&type=multiple"
+    )
 }
 
 # Chosen difficulty levels returned with user input
