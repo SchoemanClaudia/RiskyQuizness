@@ -1,6 +1,7 @@
 import requests
 import random
 import html
+import colorama
 from colorama import Fore, Back, Style
 
 
