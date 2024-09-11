@@ -72,7 +72,7 @@ def display_questions(question_data, index):
 
     # Format display of each question and the choices individually
     # Add color to feedback sections: https://pypi.org/project/colorama/
-    print(Fore.CYAN + f"Question {index + 1}:\n{question}")
+    print(Style.BRIGHT + Fore.CYAN + f"Question {index + 1}:\n{question}")
     print(Style.RESET_ALL)
     for i in range(len(all_answers)):
         answer = all_answers[i]
@@ -92,7 +92,7 @@ def get_input(prompt, valid_options):
             return user_input
         # Pull valid options from get_level and to assist user input
         else:
-            print(Fore.BLACK + Back.YELLOW + f"\nINVALID INPUT!")
+            print(Style.BRIGHT + Back.YELLOW + f"\nINVALID INPUT!")
             print(Style.RESET_ALL)
             print(f"Enter one of the following: {', '.join(valid_options)}.")
 
@@ -106,13 +106,13 @@ def game_loop(team_name=None):
     https://stackoverflow.com/questions/47840794/none-in-python
     """
     if not team_name:
-        print(Fore.CYAN + "*** Risky Quizness ***\n")
+        print(Style.BRIGHT + Fore.CYAN + "*** Risky Quizness ***\n")
         print(Style.RESET_ALL)
         print("Welcome to our film trivia, are you a true film buff?")
         print("Test your knowledge with 10 multiple choice questions.\n")
         # User to enter their name
         team_name = input(
-            Fore.CYAN + "What is your team name?\n").strip().title()
+            Fore.CYAN + "Enter your team name:\n").strip().title()
         print(Style.RESET_ALL)
 
     # Introduce user to quiz and select difficulty level (1, 2, or 3)
@@ -147,7 +147,7 @@ def game_loop(team_name=None):
 
         # Validate if team_answer is correct
         if all_answers[int(team_answer) - 1] == correct_answer:
-            print(Fore.GREEN + f"--> Correct {team_name}!\n")
+            print(Style.BRIGHT + Fore.GREEN + f"--> Correct {team_name}!\n")
             print(Style.RESET_ALL)
             team_score += 1
         else:
@@ -155,7 +155,7 @@ def game_loop(team_name=None):
             print(Style.RESET_ALL)
 
     # Calculate player score after all 10 quiz questions completed
-    print(Fore.CYAN + f"*** {team_name}, your score is {team_score}/10 ***")
+    print(Style.BRIGHT + Fore.CYAN + f"*** You scored {team_score}/10 ***")
 
     # Gives player feedback based on their final score
     if team_score < 5:
@@ -183,7 +183,7 @@ def game_loop(team_name=None):
     elif play_again == '2':
         game_loop()
     else:
-        print(Fore.CYAN + f"*** See you soon {team_name} ***")
+        print(Style.BRIGHT + Fore.CYAN + f"*** See you soon {team_name} ***")
         print(Style.RESET_ALL)
 
 
