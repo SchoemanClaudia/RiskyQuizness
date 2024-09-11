@@ -116,17 +116,31 @@ __Future Features__
 
 ### Bugs Encountered
 
-- xxx
-  - xxx
-- xxx
-  - xxx
+- HTML fetched from the quiz question & answers API returns as unicode type:
+  - adding 'html.unescape()' cleans API HTML fetched and makes it more readable.
 
-![xx](assets/images/xx.webp)
+![Unicode HTML](assets/images/xx.webp)
+
+- During initial deployment 'ModuleNotFoundError' blocked app from running:
+  - requests import was not updating requirements.txt when running to the terminal
+  - numerous trial & errors with adding requests import and running pip3 freeze > requirements.txt to terminal
+  - by manually adding 'requests==2.32.2' to requirements.txt file, it assisted Heroku with recognising the library and successfully deployed app for first phase of testing.
+
+![Initial deployment](assets/images/xx.webp)
+
+- After adding colorama import, another 'ModuleNotFoundError' presented after deployment:
+  - pip3 install colorama stated 'Requirements satisfied' when running to the terminal
+  - after pushing a few solutions I realised the requirements.txt file was not updating as it should
+  - by runinning pip list to terminal I was able to see what packages were installed:
+    - 'pip install requests==2.32.2' to reload before runung 'pip3 freeze --local > requirements.txt' to terminal
+  - ran pip list to terminal again and both packages were now successfully installed
+  - Deployed newly pushed updated requirements, and app loaded successfully with colourama functioning
+
 ![xx](assets/images/xx.webp)
 
 ### Unfixed Bugs
 
-- No unfixed bugs, [xx](xx) returned with no errors.
+- No unfixed bugs, all validation returned with no errors.
 
 ![Final Result](assets/images/result.webp)
 
