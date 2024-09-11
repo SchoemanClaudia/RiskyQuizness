@@ -82,20 +82,20 @@ def get_input(prompt, valid_options):
             print(f"Enter one of the following: {', '.join(valid_options)}.")
 
 
-def game_loop(player_name=None):
+def game_loop(team_name=None):
     """
     Run welcome screen to main menu,
     user enters name and selects quiz difficulty.
-    Modify by adding player_name=None, to accept player_name
-    allowing quiz to retain the player_name if replaying
+    Modify by adding team_name=None, to accept team_name
+    allowing quiz to retain the team_name if replaying
     https://stackoverflow.com/questions/47840794/none-in-python
     """
-    if not player_name:
+    if not team_name:
         print("*** Risky Quizness ***\n")
         print("Welcome to our film trivia, are you a true film buff?")
         print("Test your knowledge with 10 multiple choice questions.\n")
         # User to enter their name
-        player_name = input("Firstly, what is your name?\n").strip().title()
+        team_name = input("What is your team name?\n").strip().title()
 
     # Introduce user to quiz and select difficulty level (1, 2, or 3)
     difficulty = get_input(
@@ -103,7 +103,7 @@ def game_loop(player_name=None):
         ['1', '2', '3']
     )
     chosen_level = LEVEL_DIFFICULTY[difficulty]
-    print(f"\n{player_name}, you have opted for {chosen_level}.\n")
+    print(f"\n{team_name}, you have opted for {chosen_level}.\n")
 
     # Load questions for the chosen difficulty level
     questions = load_questions(difficulty)
@@ -112,7 +112,7 @@ def game_loop(player_name=None):
         return
 
     # Start score counter at 0
-    player_score = 0
+    team_score = 0
 
     # Display 10 randomised questions only, from the level selected
     # 40 questions fetched per difficulty level
@@ -124,43 +124,43 @@ def game_loop(player_name=None):
         )
 
         # Loop through quiz after player answers each question with valid input
-        player_answer = get_input("\n--> Answer (1-4): ", ['1', '2', '3', '4'])
+        team_answer = get_input("\n--> Answer (1-4): ", ['1', '2', '3', '4'])
 
-        # Validate if player_answer is correct
-        if all_answers[int(player_answer) - 1] == correct_answer:
-            print(f"--> Correct {player_name}!\n")
-            player_score += 1
+        # Validate if team_answer is correct
+        if all_answers[int(team_answer) - 1] == correct_answer:
+            print(f"--> Correct {team_name}!\n")
+            team_score += 1
         else:
             print(f"--> Oops! The correct answer is: {correct_answer}\n")
 
     # Calculate player score after all 10 quiz questions completed
-    print(f"*** {player_name}, your score is {player_score}/10 ***")
+    print(f"*** {team_name}, your score is {team_score}/10 ***")
 
     # Gives player feedback based on their final score
-    if player_score < 5:
+    if team_score < 5:
         print(f"Better luck next time! Not quite the film buff just yet.\n")
-    elif player_score >= 8:
+    elif team_score >= 8:
         print(f"Right down to Quizness... you're a true film buff!\n")
     else:
         # Score between 5 and 7
         print(f"Not bad, you could brush up on your film knowledge.\n")
 
 # Give user options:
-# 1 = take another quiz as the same player_name
-# 2 = take quiz as a new player_name
+# 1 = take another quiz as the same team_name
+# 2 = take quiz as a new team_name
 # 3 = exit the quiz
     play_again = get_input(
-        "Want to try again?\n1. New Quiz\n2. New player\n3. Exit\n",
+        "Want to try again?\n1. New Quiz\n2. New Team\n3. Exit\n",
         ['1', '2', '3']
     )
     # Same player takes quiz
     if play_again == '1':
-        game_loop(player_name)
+        game_loop(team_name)
     # New player takes quiz
     elif play_again == '2':
         game_loop()
     else:
-        print(f"*** Goodbye {player_name}, thank you for playing ***")
+        print(f"*** Goodbye {team_name}, thank you for playing ***")
 
 
 # Initial quiz launch
