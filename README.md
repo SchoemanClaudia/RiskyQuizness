@@ -41,10 +41,21 @@ Live Link: https://risky-quizness-c9032af3d3e3.herokuapp.com/
 ### Features
 
 __Existing features:__
-- xx
-- xx
-  - xx
-  - xx
+- Teams are able to add their names for personalised feedback during quiz.
+- Based on players knowledge, they are able to select a difficulty level.
+  - Levels are easy, medium and hard which are pulled directly from a loaded API for each difficulty within the theme.
+- Questions asked are fetched from a loaded API that has 40 questions within the libabry.
+  - Random shuffle function added to allow for a fresh set of 10 questions with each round played.
+  - This helps with replayability of quiz.
+- Keep track of questions and answers as players progress.
+  - If correct, the players are given a message "Correct {team_name}!"
+  - If incorrect, the players are presented with the correct answer "Oops! The correct answer is: {correct_answer}"
+- After each round of 10 questions the team is presented with their total score tally out of 10.
+  - While players answer each question, a +1 counter is added to towards their final total.
+- Players are given feedback based on their final score average.
+  - If score is less than 5, "Better luck next time! Not quite the film buff just yet."
+  - If score between 5 and 7 "Not bad, you could brush up on your film knowledge."
+  - If score greater than and equal to 8, "Right down to Quizness... you're a true film buff!"
 
 __Future Features__
 - xx
