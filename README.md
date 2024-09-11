@@ -9,7 +9,6 @@ Live Link: https://risky-quizness-c9032af3d3e3.herokuapp.com/
 ![Responsive Mock-up](assets/images/responsive-mockup.webp)
 
 
-
 ## Game Scope
 
 ### Overview
@@ -71,16 +70,12 @@ __Future Features__
     - include mini quiz games for single players on the move to brush up on their quiz theme knowledge.
 - Bring in a few animated screens between rounds and questions for interactive fun during quiz game game play.
 
+
 ## Solution Model
 
 ### Flowchart
 
 ![Flowchart](assets/images/flowchart.webp)
-
-
-## Testing 
-
--   xxx
 
 
 ## Technologies Used
@@ -102,6 +97,11 @@ __Future Features__
   - Converting the characters in strings to HTML: https://stackoverflow.com/questions/2087370/decode-html-entities-in-python-string
   - Random shuffle of answers: https://www.geeksforgeeks.org/random-shuffle-function-in-python/
   - Retain team_name: https://stackoverflow.com/questions/47840794/none-in-python
+
+
+## Testing 
+
+-   xxx
 
 ### Validator Testing 
 

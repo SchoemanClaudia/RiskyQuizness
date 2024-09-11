@@ -1,6 +1,8 @@
 import requests
 import random
 import html
+from colorama import Fore, Back, Style
+
 
 # URL's for different difficulty API levels
 # https://www.dataquest.io/blog/python-api-tutorial/
@@ -59,7 +61,8 @@ def display_questions(question_data, index):
     random.shuffle(all_answers)
 
     # Format display of each question and the choices individually
-    print(f"Question {index + 1}:\n{question}")
+    print(Fore.CYAN + f"Question {index + 1}:\n{question}")
+    print(Style.RESET_ALL)
     for i in range(len(all_answers)):
         answer = all_answers[i]
         print(f"{i + 1}. {answer}")
@@ -91,11 +94,13 @@ def game_loop(team_name=None):
     https://stackoverflow.com/questions/47840794/none-in-python
     """
     if not team_name:
-        print("*** Risky Quizness ***\n")
+        print(Fore.CYAN + "*** Risky Quizness ***\n")
+        print(Style.RESET_ALL)
         print("Welcome to our film trivia, are you a true film buff?")
         print("Test your knowledge with 10 multiple choice questions.\n")
         # User to enter their name
-        team_name = input("What is your team name?\n").strip().title()
+        team_name = input(Fore.CYAN + "What is your team name?\n").strip().title()
+        print(Style.RESET_ALL)
 
     # Introduce user to quiz and select difficulty level (1, 2, or 3)
     difficulty = get_input(
@@ -103,7 +108,8 @@ def game_loop(team_name=None):
         ['1', '2', '3']
     )
     chosen_level = LEVEL_DIFFICULTY[difficulty]
-    print(f"\n{team_name}, you have opted for {chosen_level}.\n")
+    print(Fore.CYAN + f"\n{team_name}, you have opted for {chosen_level}.\n")
+    print(Style.RESET_ALL)
 
     # Load questions for the chosen difficulty level
     questions = load_questions(difficulty)
@@ -128,13 +134,15 @@ def game_loop(team_name=None):
 
         # Validate if team_answer is correct
         if all_answers[int(team_answer) - 1] == correct_answer:
-            print(f"--> Correct {team_name}!\n")
+            print(Fore.GREEN + f"--> Correct {team_name}!\n")
+            print(Style.RESET_ALL)
             team_score += 1
         else:
-            print(f"--> Oops! The correct answer is: {correct_answer}\n")
+            print(Fore.RED + f"--> Oops! The correct answer is: {correct_answer}\n")
+            print(Style.RESET_ALL)
 
     # Calculate player score after all 10 quiz questions completed
-    print(f"*** {team_name}, your score is {team_score}/10 ***")
+    print(Fore.CYAN + f"*** {team_name}, your score is {team_score}/10 ***")
 
     # Gives player feedback based on their final score
     if team_score < 5:
@@ -145,6 +153,8 @@ def game_loop(team_name=None):
         # Score between 5 and 7
         print(f"Not bad, you could brush up on your film knowledge.\n")
 
+    print(Style.RESET_ALL)
+    
 # Give user options:
 # 1 = take another quiz as the same team_name
 # 2 = take quiz as a new team_name
@@ -160,7 +170,8 @@ def game_loop(team_name=None):
     elif play_again == '2':
         game_loop()
     else:
-        print(f"*** Goodbye {team_name}, thank you for playing ***")
+        print(Fore.CYAN + f"*** Goodbye {team_name}, thank you for playing ***")
+        print(Style.RESET_ALL)
 
 
 # Initial quiz launch
