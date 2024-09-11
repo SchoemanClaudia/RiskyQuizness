@@ -14,14 +14,29 @@ Live Link: https://risky-quizness-c9032af3d3e3.herokuapp.com/
 
 ### Overview
 
-- This version of the app allows each team to answer 10 multiple choice questions, with each question immediately validated.
+- The prototype app is based on film trivia with all questions fetched from the API related to the film industry theme.
+- Each team has to complete answering 10 multiple choice questions, with each question immediately validated.
 - As the teams progress through the quiestions and levels, their points / score is kept track of. 
 - When teams have completed answering all questions their final score is presented to them.
 - Players then have the option to continue playing, play as a new team or finish their quiz journey.
 
 ### How to play
 
-- xxxx
+- Each team is welcomed to the main screen where they are promted to enter their team name.
+- After their name has been added to the system, they are asked to select their difficulty level based on their theme knowledge.
+  - Difficulty levels are presented as 1 = Easy, 2 = Medium and 3 = Hard.
+  - Players to input numbers 1,2 or 3 based on their decision on level to procceed with.
+- The players will then start with answering Question 1 fetched from selected level chosen.
+  - They will be presented with 4 possible answers to choose from in a multiple choice form.
+  - Players will then input an option 1, 2, 3 or 4.
+- When teams have answered their question, their choice is immediately validated as correct or incorrect.
+  - If correct, a +1 counter is added to the teams score for end of game tally.
+- Players need to answer all 10 questions to reach the end of the quiz.
+- After Question 10 has been answered, the team score total is presented out of 10.
+- Players then have the option to either:
+  - 1 = Play again: This allows the players to keep their team name and choose a new difficulty level
+  - 2 = New Team: Allows a new team to take over and test their knowledge
+  - 3 = Exit: Let's teams finish their round and exit their game play.
 
 ### Features
 
