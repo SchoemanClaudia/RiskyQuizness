@@ -61,6 +61,7 @@ def display_questions(question_data, index):
     random.shuffle(all_answers)
 
     # Format display of each question and the choices individually
+    # Add color to feedback sections: https://pypi.org/project/colorama/
     print(Fore.CYAN + f"Question {index + 1}:\n{question}")
     print(Style.RESET_ALL)
     for i in range(len(all_answers)):
@@ -81,7 +82,8 @@ def get_input(prompt, valid_options):
             return user_input
         # Pull valid options from get_level and to assist user input
         else:
-            print(f"\nINVALID INPUT!")
+            print(Back.YELLOW + f"\nINVALID INPUT!")
+            print(Style.RESET_ALL)
             print(f"Enter one of the following: {', '.join(valid_options)}.")
 
 
