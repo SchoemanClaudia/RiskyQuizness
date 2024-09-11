@@ -78,21 +78,6 @@ __Future Features__
 ![Flowchart](assets/images/flowchart.webp)
 
 
-### Future Features to Implement
-
-- xxx
-  - xxx
-  - xxx
-- xxx
-
-### Future Model
-
-__Future feature flowchart model__
-  - xxxx
-
-![Future Model Flowchart](assets/images/future-model.webp)
-
-
 ## Testing 
 
 -   xxx
@@ -109,10 +94,14 @@ __Future feature flowchart model__
 ### Other Sites
 
 - Quiz Trivia API:
-  - xxx: xxx
+  - Within this platform, it allowed me to generate specific API links according to trivia theme and difficulty.
+    - Open Trivia Database: https://opentdb.com/
 
 - Assisted problem solving sites:
-  - xxx: xxx
+  - Python API Tutorial: https://www.dataquest.io/blog/python-api-tutorial/
+  - Converting the characters in strings to HTML: https://stackoverflow.com/questions/2087370/decode-html-entities-in-python-string
+  - Random shuffle of answers: https://www.geeksforgeeks.org/random-shuffle-function-in-python/
+  - Retain team_name: https://stackoverflow.com/questions/47840794/none-in-python
 
 ### Validator Testing 
 
