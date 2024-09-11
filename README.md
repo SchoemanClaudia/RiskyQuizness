@@ -135,21 +135,21 @@ __Future Features__
 
 ### Heroku
 - The site was deployed to Heroku as follows:
-  - Log into Heroku or create an account if you don't already have one.
-  - Click 'New' from the top right of the screen.
-  - Select 'Create new app'.
-  - Enter a unique application name - select appropriate region.
+  - Log into Heroku or create an account if you don't already have one
+  - Click 'New' from the top right of the screen
+  - Select 'Create new app'
+  - Enter a unique application name - select appropriate region
   - Click 'Create app'
-  - One the following page, click the 'Settings' tab and scroll to Config Vars.
-  - In the KEY input field, enter 'PORT' and in the VALUE input field, enter '8000'.
-  - Click 'Add'.
-  - On the same page, scroll down to buildpacks and add two buildpacks.
-  - The ordering for these is heroku/python followed by heroku/nodejs.
-  - At the top of the page, click 'Deploy'.
-  - Select Github as the deployment method.
-  - Search for and select correct repository and click 'Connect'.
+  - One the following page, click the 'Settings' tab and scroll to Config Vars
+  - In the KEY input field, enter 'PORT' and in the VALUE input field, enter '8000'
+  - Click 'Add'
+  - On the same page, scroll down to buildpacks and add two buildpacks
+  - The ordering for these is heroku/python followed by heroku/nodejs
+  - At the top of the page, click 'Deploy'
+  - Select Github as the deployment method
+  - Search for and select correct repository and click 'Connect'
   - At the bottom of the same page, select either Automatic Deployment or Manual Deployment
-  - Wait for your site to be deployed.
+  - Wait for your site to be deployed
 - The site was deployed to Heroku, the live link can be found here: https://risky-quizness-c9032af3d3e3.herokuapp.com/
 
 ### Cloning of the Repository Code locally
@@ -162,17 +162,16 @@ __Future Features__
 
 ### Version Control
 - The quiz was created using Gitpod editor and pushed to Github to the remote repository 'RiskyQuizness'
-- Git commands were used throughout the development to push the code to the remote repository. 
+- Git commands were used throughout the development to push the code to the remote repository
 - The following git commands were used:
   - git add . - to add the files to the staging area before being committed
   - git commit -m "commit message" - to commit changes to the local repository queue that are ready for the final step
   - git push - to push all committed code to the remote repository on Github
-  - pip3 install imports for python library assistance
+  - pip3 install imports for python library loads
 
 
 ## Credits 
 
-- Slack channel learn-python peers
-- Slack channel peer-code-review for their feedback and taking the time to look at Risky Quizness with fresh eyes
-- My mentor for the support and knowledge shared, which has been invaluable during our mentor calls
-- Tutor Assist
+- Slack channel peers for their feedback with questions and taking the time to look at Risky Quizness with fresh eyes
+- My mentor for the support and knowledge shared to keeping prototype simple and clean
+- Tutor Assist for the support with getting Heroku and Github version to communicate with app deployment
