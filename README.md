@@ -101,7 +101,22 @@ __Future Features__
 
 ## Testing 
 
--   xxx
+| TEST INPUT | CORRECT OUTCOME | MEET REQUIREMENTS |
+|:---:|:---:|:---:|
+| Load welcome message | Main page loads correctly | PASS |
+| Input team name | User input is returned as Title Case & trailing whitespaces removed | PASS |
+| Input difficulty option | User can only input 1, 2, or 3 & trailing whitespaces removed. INVALID INPUT! is prompted & user is asked to input again | PASS |
+| Load question 1 | After difficulty level selected, user is prompted question 1 | PASS |
+| Answer input validation | User can only input 1, 2, 3 or 4 & trailing whitespaces removed. INVALID INPUT! is prompted & user is asked to input again | PASS |
+| Correct answer feedback | Correctly input answer prompts bold & adds +1 counter to score for final total | PASS |
+| Incorrect answer feedback | Incorrectly input answer prompts what the correct answer actually is & does not add any counters to final score | PASS |
+| Quiz questions shuffle | Quiz questions shuffle & rotate the 40 API questions, fetching a new set of questions for each new quiz round played | PASS |
+| Correct answer display randomised | Multiple choice answers fetched from API are displayed randomised for each new question | PASS |
+| Score validation | After all 10 questions have been answered, the team score is presented with feedback message based on success rate | PASS |
+| End of quiz menu | User can only input 1, 2 or 3 & trailing whitespaces removed. INVALID INPUT! is prompted & user is asked to input again | PASS |
+| New Quiz prompt | Retains team name & returns user to select a new difficulty level. User can only input 1, 2 or 3 & trailing whitespaces removed. INVALID INPUT! is prompted & user is asked to input again | PASS |
+| New Team prompt | Returns user to welcome message & input a new team name. User can only input 1, 2 or 3 & trailing whitespaces removed. INVALID INPUT! is prompted & user is asked to input again | PASS |
+| Exit prompt | User is exited from app with goodbye feedback to confirm. User can only input 1, 2 or 3 & trailing whitespaces removed. INVALID INPUT! is prompted & user is asked to input again | PASS |
 
 ### Validator Testing 
 

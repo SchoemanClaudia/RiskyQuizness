@@ -43,7 +43,7 @@ def load_questions(difficulty):
         return response.json()["results"]
     else:
         # Feedback if quiz API doesn't load initially
-        print("Error loading the quiz questions, please reload page.")
+        print("Error loading quiz questions, please reload page.")
         return []
 
 
@@ -52,7 +52,8 @@ def display_questions(question_data, index):
     Display and format questions and answer choices,
     includes correct and incorrect answers
     """
-    # stackoverflow.com/questions/2087370/decode-html-entities-in-python-string
+    # https://www.stackoverflow.com
+    # /questions/2087370/decode-html-entities-in-python-string
     question = html.unescape(
         question_data['question']
     )
@@ -121,7 +122,7 @@ def game_loop(team_name=None):
         ['1', '2', '3']
     )
     chosen_level = LEVEL_DIFFICULTY[difficulty]
-    print(Fore.CYAN + f"\n{team_name}, you have opted for {chosen_level}.\n")
+    print(Fore.CYAN + f"\n{team_name}, you opted for {chosen_level}.\n")
     print(Style.RESET_ALL)
 
     # Load questions for the chosen difficulty level
