@@ -41,20 +41,36 @@ Live Link: https://risky-quizness-c9032af3d3e3.herokuapp.com/
 
 __Existing features:__
 - Teams are able to add their names for personalised feedback during quiz.
+  ![Team Name](assets/images/team-name.webp)
 - Based on players knowledge, they are able to select a difficulty level.
   - Levels are easy, medium and hard which are pulled directly from a loaded API for each difficulty within the theme.
+  ![Difficulty Level](assets/images/level.webp)
+
 - Questions asked are fetched from a loaded API that has 40 questions within the libabry.
   - Random shuffle function added to allow for a fresh set of 10 questions with each round played.
   - This helps with replayability of quiz.
+  ![Questions](assets/images/questions.webp)
+
 - Keep track of questions and answers as players progress.
   - If correct, the players are given a message "Correct {team_name}!"
   - If incorrect, the players are presented with the correct answer "Oops! The correct answer is: {correct_answer}"
+  ![Correct Answer](assets/images/correct-answer.webp)
+  ![Incorrect Answer](assets/images/incorrect-answer.webp)
+
 - After each round of 10 questions the team is presented with their total score tally out of 10.
   - While players answer each question, a +1 counter is added to towards their final total.
 - Players are given feedback based on their final score average.
   - If score is less than 5, "Better luck next time! Not quite the film buff just yet."
   - If score between 5 and 7 "Not bad, you could brush up on your film knowledge."
   - If score greater than and equal to 8, "Right down to Quizness... you're a true film buff!"
+  ![Score Feedback A](assets/images/score-a.webp)
+  ![Score Feedback B](assets/images/score-b.webp)
+  ![Score Feedback C](assets/images/score-c.webp)
+
+- Only valid inputs are accepted during quiz game play:
+  - if player inputs the incorrect value, feedback is given to prompt a valid input with accepted options allowed.
+  ![Menu Input Validation](assets/images/input-validation.webp)
+  ![Answer Validation Menu](assets/images/input-validation.webp)
 
 __Future Features__
 - Adding more trivia theme options, allowing players to choose their prefered trivia theme nights.
@@ -139,14 +155,14 @@ __Future Features__
 - HTML fetched from the quiz question & answers API returns as unicode type:
   - adding 'html.unescape()' cleans API HTML fetched and makes it more readable.
 
-![Unicode HTML](assets/images/xx.webp)
+![Unicode HTML](assets/images/unicode.webp)
 
 - During initial deployment 'ModuleNotFoundError' blocked app from running:
   - requests import was not updating requirements.txt when running to the terminal
   - numerous trial & errors with adding requests import and running pip3 freeze > requirements.txt to terminal
   - by manually adding 'requests==2.32.2' to requirements.txt file, it assisted Heroku with recognising the library and successfully deployed app for first phase of testing.
 
-![Initial deployment](assets/images/xx.webp)
+![Initial deployment](assets/images/first-deploy.webp)
 
 - After adding colorama import, another 'ModuleNotFoundError' presented after deployment:
   - pip3 install colorama stated 'Requirements satisfied' when running to the terminal
@@ -156,13 +172,13 @@ __Future Features__
   - ran pip list to terminal again and both packages were now successfully installed
   - Deployed newly pushed updated requirements, and app loaded successfully with colourama functioning
 
-![xx](assets/images/xx.webp)
+![Colorama module](assets/images/module-error.webp)
 
 ### Unfixed Bugs
 
 - No unfixed bugs, app running with no errors.
 
-![Final Result](assets/images/heroku-app.webp)
+![Final Result Success](assets/images/heroku-app.webp)
 
 
 ## Deployment
@@ -198,10 +214,12 @@ __Future Features__
 - The quiz was created using Gitpod editor and pushed to Github to the remote repository 'RiskyQuizness'
 - Git commands were used throughout the development to push the code to the remote repository
 - The following git commands were used:
-  - git add . - to add the files to the staging area before being committed
-  - git commit -m "commit message" - to commit changes to the local repository queue that are ready for the final step
-  - git push - to push all committed code to the remote repository on Github
-  - pip3 install imports for python library loads
+  - git add .  to add the files to the staging area before being committed
+  - git commit -m "commit message", to commit changes to the local repository queue that are ready for the final step
+  - git push, to push all committed code to the remote repository on Github
+  - pip3 install imports, for python library loads
+  - add loaded packages to requirements.txt file for Heroku:
+    - run, pip3 freeze > requirements.txt, to terminal
 
 
 ## Credits 
