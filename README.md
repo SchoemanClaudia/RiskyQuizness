@@ -120,14 +120,19 @@ __Future Features__
 
 ### Validator Testing 
 
-- xxx
-  - xxx:
-    - xxx
-    - xxx
+- Passed the code through CI PEP8 Python Validator, there were very few errors present, all were quick fixes.
+  - E501 line too long >79 characters:
+    - The API URLs were split into multiple lines using parentheses around the strings
+    - A few print statements needed shortening and refining of characters
+    - No other lines exceed 79 characters, complying with the PEP 8 guidelines
+  - W293 blank line contains whitespace:
+    - Removed space within the blank line section in 108, complying with the PEP 8 guidelines
 
-  - After fixing above attributes, no errors were found when running the code through the [xx](xxx)
+![Errors encountered](assets/images/error.webp)
 
-![Screenshot of errors](assets/images/error.webp)
+  - After fixing above attributes, no errors were found when running the code through [CI PEP8 Python Validator](https://pep8ci.herokuapp.com/)
+
+![No errors](assets/images/clear.webp)
 
 ### Bugs Encountered
 
@@ -155,9 +160,9 @@ __Future Features__
 
 ### Unfixed Bugs
 
-- No unfixed bugs, all validation returned with no errors.
+- No unfixed bugs, app running with no errors.
 
-![Final Result](assets/images/result.webp)
+![Final Result](assets/images/heroku-app.webp)
 
 
 ## Deployment
