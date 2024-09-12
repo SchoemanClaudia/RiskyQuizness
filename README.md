@@ -41,21 +41,25 @@ Live Link: https://risky-quizness-c9032af3d3e3.herokuapp.com/
 
 __Existing features:__
 - Teams are able to add their names for personalised feedback during quiz.
-  ![Team Name](assets/images/team-name.webp)
+
+  ![Welcome screen](assets/images/welcome.webp) | ![Team Name](assets/images/team-name.webp)
+
 - Based on players knowledge, they are able to select a difficulty level.
   - Levels are easy, medium and hard which are pulled directly from a loaded API for each difficulty within the theme.
+
   ![Difficulty Level](assets/images/level.webp)
 
 - Questions asked are fetched from a loaded API that has 40 questions within the libabry.
   - Random shuffle function added to allow for a fresh set of 10 questions with each round played.
   - This helps with replayability of quiz.
+
   ![Questions](assets/images/questions.webp)
 
 - Keep track of questions and answers as players progress.
   - If correct, the players are given a message "Correct {team_name}!"
   - If incorrect, the players are presented with the correct answer "Oops! The correct answer is: {correct_answer}"
-  ![Correct Answer](assets/images/correct-answer.webp)
-  ![Incorrect Answer](assets/images/incorrect-answer.webp)
+
+  ![Correct Answer](assets/images/correct-answer.webp) | ![Incorrect Answer](assets/images/incorrect-answer.webp)
 
 - After each round of 10 questions the team is presented with their total score tally out of 10.
   - While players answer each question, a +1 counter is added to towards their final total.
@@ -63,14 +67,21 @@ __Existing features:__
   - If score is less than 5, "Better luck next time! Not quite the film buff just yet."
   - If score between 5 and 7 "Not bad, you could brush up on your film knowledge."
   - If score greater than and equal to 8, "Right down to Quizness... you're a true film buff!"
-  ![Score Feedback A](assets/images/score-a.webp)
-  ![Score Feedback B](assets/images/score-b.webp)
-  ![Score Feedback C](assets/images/score-c.webp)
+  
+  ![Score Feedback A](assets/images/score-a.webp) | ![Score Feedback B](assets/images/score-b.webp) | ![Score Feedback C](assets/images/score-c.webp)
+
+- Team is given the option after quiz end to replay as their existing team name, allow a new team name to be entered for a new game, or exit quiz app.
+  - If New Quiz, team starts a new quiz round as exisiting team name
+    - redirects user to select a difficulty level if they want to more of a challenge.
+  - If New Team, user is redirected to main welcome screen to start a new journey.
+  - If Exit, the app stops and user recieves feedback to confirm end of quiz journey.
+
+  ![Exit feedback](assets/images/exit.webp)
 
 - Only valid inputs are accepted during quiz game play:
   - if player inputs the incorrect value, feedback is given to prompt a valid input with accepted options allowed.
-  ![Menu Input Validation](assets/images/input-validation.webp)
-  ![Answer Validation Menu](assets/images/input-validation.webp)
+
+  ![Input Validation](assets/images/input-error.webp)
 
 __Future Features__
 - Adding more trivia theme options, allowing players to choose their prefered trivia theme nights.
@@ -144,9 +155,9 @@ __Future Features__
   - W293 blank line contains whitespace:
     - Removed space within the blank line section in 108, complying with the PEP 8 guidelines
 
-![Errors encountered](assets/images/error.webp)
+  ![Errors encountered](assets/images/errors.webp)
 
-  - After fixing above attributes, no errors were found when running the code through [CI PEP8 Python Validator](https://pep8ci.herokuapp.com/)
+- After fixing above attributes, no errors were found when running the code through [CI PEP8 Python Validator](https://pep8ci.herokuapp.com/)
 
 ![No errors](assets/images/clear.webp)
 

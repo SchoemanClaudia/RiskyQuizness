@@ -160,12 +160,12 @@ def game_loop(team_name=None):
 
     # Gives player feedback based on their final score
     if team_score < 5:
-        print(f"Better luck next time! Not quite the film buff just yet.\n")
+        print(f"Better luck next time! Not quite the film buff just yet.")
     elif team_score >= 8:
-        print(f"Right down to Quizness... you're a true film buff!\n")
+        print(f"Right down to Quizness... you're a true film buff!")
     else:
         # Score between 5 and 7
-        print(f"Not bad, you could brush up on your film knowledge.\n")
+        print(f"Not bad, you could brush up on your film knowledge.")
 
     print(Style.RESET_ALL)
 
@@ -174,7 +174,7 @@ def game_loop(team_name=None):
 # 2 = take quiz as a new team_name
 # 3 = exit the quiz
     play_again = get_input(
-        "Want to try again?\n1. New Quiz\n2. New Team\n3. Exit\n",
+        "\nWant to try again?\n1. New Quiz\n2. New Team\n3. Exit\n",
         ['1', '2', '3']
     )
     # Same player takes quiz
