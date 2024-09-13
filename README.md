@@ -32,7 +32,7 @@ Live Link: https://risky-quizness-c9032af3d3e3.herokuapp.com/
 - Players need to answer all 10 questions to reach the end of the quiz
 - After Question 10 has been answered, the team score total is presented out of 10
 - Players then have the option to either:
-  - 1 = Play again: This allows the players to keep their team name and choose a new difficulty level
+  - 1 = Play again: This allows the players to retain their team name and choose a new difficulty level
   - 2 = New Team: Allows a new team to take over and test their knowledge
   - 3 = Exit: Let's teams finish their round and exit their game play
 
@@ -41,18 +41,18 @@ Live Link: https://risky-quizness-c9032af3d3e3.herokuapp.com/
 __Existing features:__
 - Teams are able to add their names for personalised feedback during quiz
 
-  ![Welcome screen](assets/images/welcome.webp) | ![Team Name](assets/images/team-name.webp)
+  ![Welcome screen](assets/images/welcome.webp)  ![Team Name](assets/images/team-name.webp)
 
 - Based on players knowledge, they are able to select a difficulty level:
   - Levels are easy, medium and hard which are pulled directly from a loaded API for each difficulty within the theme
 
   ![Difficulty Level](assets/images/level.webp)
 
-- Questions asked are fetched from a quiz database that has 40 questions within the library:
+- Questions asked are fetched from a quiz database that holds 40 questions within the library:
   - Random shuffle function added to allow for a fresh set of 10 questions with each round played:
     - This helps with replayability of quiz and challenge teams with every quiz level
   - Longer questions fetched from the API causes a line break, often hyphenating words into the next line:
-    - This is a result of the API data loaded within app template, which will be modified in later versions to accommodate line breaks when updating interface while hosting and controlling a Risky Quizness database
+    - This is a result of the API data loaded within app template, which will be modified in later versions to accommodate line breaks when updating interface, while hosting and controlling a personalised Risky Quizness database
 
   ![Questions](assets/images/questions.webp)
 
@@ -60,29 +60,29 @@ __Existing features:__
   - If correct, the players are given a message "Correct {team_name}!"
   - If incorrect, the players are presented with the correct answer "Oops! The correct answer is: {correct_answer}"
 
-  ![Correct Answer](assets/images/correct-answer.webp) | ![Incorrect Answer](assets/images/incorrect-answer.webp)
+  ![Correct Answer](assets/images/correct-answer.webp)  ![Incorrect Answer](assets/images/incorrect-answer.webp)
 
 - After each round of 10 questions the team is presented with their total score tally out of 10:
   - While players answer each question, a +1 counter is added towards their final total
 - Players are given feedback based on their final score average:
   - If score is less than 5, "Better luck next time! Not quite the film buff just yet."
-  - If score between 5 and 7 "Not bad, you could brush up on your film knowledge."
-  - If score greater than and equal to 8, "Right down to Quizness... you're a true film buff!"
+  - If score is between 5 and 7 "Not bad, you could brush up on your film knowledge."
+  - If score is greater than and equal to 8, "Right down to Quizness... you're a true film buff!"
   
-  ![Score Feedback A](assets/images/score-a.webp) | ![Score Feedback B](assets/images/score-b.webp) | ![Score Feedback C](assets/images/score-c.webp)
+  ![Score Feedback A](assets/images/score-a.webp)  ![Score Feedback B](assets/images/score-b.webp) | ![Score Feedback C](assets/images/score-c.webp)
 
-- Team is given the option after quiz end to replay as their existing team name, allow a new team name to be entered for a new game, or exit quiz app:
+- Players are given the option after quiz end to replay as their existing team name, allow a new team name to be entered for a new game, or exit quiz app:
   - If New Quiz, team starts a new quiz round as existing team name:
-    - redirects user to select a difficulty level if they want to more of a challenge
-  - If New Team, user is redirected to main welcome screen to start a new journey
-  - If Exit, the app stops and user receives feedback to confirm end of quiz journey
+    - redirects players to select a difficulty level if they want to more of a challenge
+  - If New Team, players are redirected to main welcome screen to start a new journey
+  - If Exit, the app stops and players receive feedback to confirm end of quiz journey
 
   ![Exit feedback](assets/images/exit.webp)
 
 - Only valid inputs are accepted during quiz game play:
   - if user inputs the incorrect value, feedback is given to prompt a valid input with accepted options allowed
 
-  ![Input Validation](assets/images/input-error.webp)
+  ![Team Name Validation](assets/images/name-error.webp). ![Input Validation](assets/images/input-error.webp)
 
 __Future Features__
 - Adding more trivia theme options, allowing players to choose their preferred trivia theme nights
@@ -137,24 +137,24 @@ __Future Features__
 
 | TEST INPUT | CORRECT OUTCOME | MEET REQUIREMENTS |
 |:---:|:---:|:---:|
-| Load welcome message | Main page loads correctly | PASS |
-| Input team name | User input is returned as Title Case & trailing whitespaces removed | PASS |
+| Load welcome message | Main page loads with welcome message and quiz details, followed by prompt to enter team name | PASS |
+| Input team name | User input is returned as Title Case & trailing whitespaces removed. 'Team name can't be blank' is prompted if blank unput is returned & user is asked to input again | PASS |
 | Input difficulty option | User can only input 1, 2, or 3 & trailing whitespaces removed. INVALID INPUT! is prompted & user is asked to input again | PASS |
-| Load 'Question 1' | After difficulty level selected, user is prompted 'Question 1', after answered, new question prompted | PASS |
+| Load 'Question 1' | After difficulty level selected, user is prompted 'Question 1', after answered, new question prompted, repeat until after 'Question 10' | PASS |
 | Answer input validation | User can only input 1, 2, 3 or 4 & trailing whitespaces removed. INVALID INPUT! is prompted & user is asked to input again | PASS |
 | Correct answer feedback | Correctly input answer prompts bold & adds +1 counter to score for final total | PASS |
 | Incorrect answer feedback | Incorrectly input answer prompts what the correct answer actually is & does not add any counters to final score | PASS |
-| Quiz questions shuffle | Quiz questions shuffle & rotate the 40 API questions, fetching a new set of questions for each new quiz round played | PASS |
+| Quiz questions shuffle | Quiz questions shuffle & rotate all 40 API questions, fetching a new set of 10 questions for each new quiz round played | PASS |
 | Correct answer display randomised | Multiple choice answers fetched from API are displayed randomised for each new question | PASS |
 | Score validation | After all 10 questions have been answered, the team score is presented with feedback message based on success rate | PASS |
 | End of quiz menu | User can only input 1, 2 or 3 & trailing whitespaces removed. INVALID INPUT! is prompted & user is asked to input again | PASS |
 | New Quiz prompt | Retains team name & returns user to select a new difficulty level. User can only input 1, 2 or 3 & trailing whitespaces removed. INVALID INPUT! is prompted & user is asked to input again | PASS |
 | New Team prompt | Returns user to welcome message & input a new team name. User can only input 1, 2 or 3 & trailing whitespaces removed. INVALID INPUT! is prompted & user is asked to input again | PASS |
-| Exit prompt | User is exited from app with goodbye feedback to confirm. User can only input 1, 2 or 3 & trailing whitespaces removed. INVALID INPUT! is prompted & user is asked to input again | PASS |
+| Exit prompt | User is exited from app, confirmed with goodbye feedback. User can only input 1, 2 or 3 & trailing whitespaces removed. INVALID INPUT! is prompted & user is asked to input again | PASS |
 
 ### Validator Testing 
 
-- Passed the code through CI PEP8 Python Validator, there were very few errors present, all were quick fixes.
+- Passed the code through [CI PEP8 Python Validator](https://pep8ci.herokuapp.com/), there were very few errors present, all were quick fixes.
   - E501 line too long >79 characters:
     - The API URLs were split into multiple lines using parentheses around the strings
     - A few print statements needed shortening and refining of characters
