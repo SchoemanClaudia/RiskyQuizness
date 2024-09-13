@@ -43,7 +43,9 @@ def load_questions(difficulty):
         return response.json()["results"]
     else:
         # Feedback if quiz API doesn't load initially
-        print("Error loading quiz questions, please reload page.")
+        print(Style.BRIGHT + Back.YELLOW + "\nError loading quiz questions")
+        print(Style.RESET_ALL)
+        print(Fore.YELLOW + "Please refresh your page.\n")
         return []
 
 
@@ -93,7 +95,7 @@ def get_input(prompt, valid_options):
             return user_input
         # Pull valid options from get_level and to assist user input
         else:
-            print(Style.BRIGHT + Back.YELLOW + f"\nINVALID INPUT!")
+            print(Style.BRIGHT + Back.YELLOW + "\nINVALID INPUT!")
             print(Style.RESET_ALL)
             print(f"Enter one of the following: {', '.join(valid_options)}.")
 
@@ -111,10 +113,18 @@ def game_loop(team_name=None):
         print(Style.RESET_ALL)
         print("Welcome to our film trivia, are you a true film buff?")
         print("Test your knowledge with 10 multiple choice questions.\n")
-        # User to enter their name
-        team_name = input(
-            Fore.CYAN + "Enter your team name:\n").strip().title()
-        print(Style.RESET_ALL)
+        # User to enter their team name
+        while True:
+            team_name = input(
+                Fore.CYAN + "Enter your team name:\n").strip().title()
+            print(Style.RESET_ALL)
+            # Validates team_name and breaks loop
+            if team_name:
+                break
+            else:
+                print(Style.BRIGHT + Back.YELLOW + "Team name can't be blank.")
+                print(Style.RESET_ALL)
+                print(Fore.YELLOW + "Please try again.\n")
 
     # Introduce user to quiz and select difficulty level (1, 2, or 3)
     difficulty = get_input(
