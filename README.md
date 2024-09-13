@@ -82,7 +82,7 @@ __Existing features:__
 - Only valid inputs are accepted during quiz game play:
   - if user inputs the incorrect value, feedback is given to prompt a valid input with accepted options allowed
 
-  ![Team Name Validation](assets/images/name-error.webp). ![Input Validation](assets/images/input-error.webp)
+  ![Team Name Validation](assets/images/name-error.webp) ![Input Validation](assets/images/input-error.webp)
 
 __Future Features__
 - Adding more trivia theme options, allowing players to choose their preferred trivia theme nights
@@ -117,6 +117,14 @@ __Future Features__
 - Quiz Trivia API:
   - Within this platform, it allowed me to generate specific API links according to trivia theme and difficulty.
     - Open Trivia Database: https://opentdb.com/
+
+- Python assisted imports
+  - Packages loaded to requirements.txt file:
+    - requests 2.32.3: https://pypi.org/project/requests/
+    - colorama 0.4.6: https://pypi.org/project/colorama/
+  - Imports to assist with API data display and random shuffle:
+    - import random
+    - import html
 
 - Flowchart diagram created using Miro app:
   - Miro: https://miro.com/
