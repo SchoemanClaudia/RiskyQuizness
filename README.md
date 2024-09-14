@@ -1,12 +1,12 @@
 # Risky Quizness
 
-It all started with a pub quiz night, it was loud and the screens were small. Our team couldn't see the quiz questions, given the position of our table and often we missed out on hearing the questions correctly. When it came to marking our pen and paper game sheets, we relied on opposing teams to accurately check our answers with what the quiz master had shouted out and hoped we had scored enough points to win a prize at the end of the night. It got me thinking about how I would improve this experience to make it easier for the players within each team while enjoying the pub atmosphere.
-
 This app has been developed as a prototype for a company called Risky Quizness, who host pub quiz games and are looking to go digital with their game nights. The idea is to allow each team to independently keep track of their questions, answers and score tally as the night progresses, and in turn streamlining the final score system for team competition progression and end of night prizes. With this prototype, Risky Quizness will be able to rotate their quiz questions automatically by fetching randomised themed questions for each round played. 
+
+It all started with a pub quiz night, it was loud and the screens were small. Our team couldn't see the quiz questions, given the position of our table and often we missed out on hearing the questions correctly. When it came to marking our pen and paper game sheets, we relied on opposing teams to accurately check our answers with what the quiz master had shouted out and hoped we had scored enough points to win a prize at the end of the night. It got me thinking about how I would improve this experience to make it easier for the players within each team, while enjoying the pub atmosphere.
 
 Live Link: https://risky-quizness-c9032af3d3e3.herokuapp.com/
 
-![Responsive Mock-up](assets/images/responsive-mockup.webp)
+![Screen Mock-up](assets/images/responsive-mockup.webp)
 
 ## Game Scope
 
@@ -25,12 +25,12 @@ Live Link: https://risky-quizness-c9032af3d3e3.herokuapp.com/
   - Difficulty levels are presented as 1 = Easy, 2 = Medium and 3 = Hard
   - Players to input numbers 1, 2 or 3 based on their decision on level to proceed with
 - The players will then start with answering 'Question 1' fetched from selected level chosen:
-  - They will be presented with 4 possible answers to choose from in a multiple choice form
+  - Teams will be presented with 4 possible answers to choose from in a multiple choice form
   - Players will then input an option 1, 2, 3 or 4
-- When teams have answered the question, their choice is immediately validated as correct or incorrect:
+- As teams answer each question, their choice is immediately validated as correct or incorrect:
   - If correct, a +1 counter is added to the teams score for end of game tally
 - Players need to answer all 10 questions to reach the end of the quiz
-- After Question 10 has been answered, the team score total is presented out of 10
+- After 'Question 10' has been answered, the team score total is presented out of 10
 - Players then have the option to either:
   - 1 = Play again: This allows the players to retain their team name and choose a new difficulty level
   - 2 = New Team: Allows a new team to take over and test their knowledge
@@ -50,7 +50,7 @@ __Existing features:__
 
 - Questions asked are fetched from a quiz database that holds 40 questions within the library:
   - Random shuffle function added to allow for a fresh set of 10 questions with each round played:
-    - This helps with replayability of quiz and challenge teams with every quiz level
+    - This helps with replayability of quiz and challenges teams with every quiz level
   - Longer questions fetched from the API causes a line break, often hyphenating words into the next line:
     - This is a result of the API data loaded within app template, which will be modified in later versions to accommodate line breaks when updating interface, while hosting and controlling a personalised Risky Quizness database
 
@@ -63,7 +63,7 @@ __Existing features:__
   ![Correct Answer](assets/images/correct-answer.webp)  ![Incorrect Answer](assets/images/incorrect-answer.webp)
 
 - After each round of 10 questions the team is presented with their total score tally out of 10:
-  - While players answer each question, a +1 counter is added towards their final total
+  - As players answer each question correctly, a +1 counter is added towards their final total
 - Players are given feedback based on their final score average:
   - If score is less than 5, "Better luck next time! Not quite the film buff just yet."
   - If score is between 5 and 7 "Not bad, you could brush up on your film knowledge."
@@ -71,9 +71,9 @@ __Existing features:__
   
   ![Score Feedback A](assets/images/score-a.webp)  ![Score Feedback B](assets/images/score-b.webp) | ![Score Feedback C](assets/images/score-c.webp)
 
-- Players are given the option after quiz end to replay as their existing team name, allow a new team name to be entered for a new game, or exit quiz app:
-  - If New Quiz, team starts a new quiz round as existing team name:
-    - redirects players to select a difficulty level if they want to more of a challenge
+- Players are given the option after quiz ends, to replay as their existing team name; allow a new team name to be entered for a new game; or exit the quiz app:
+  - If New Quiz, team starts a new quiz round as their existing team name:
+    - redirects players to select a difficulty level, if they want more of a challenge
   - If New Team, players are redirected to main welcome screen to start a new journey
   - If Exit, the app stops and players receive feedback to confirm end of quiz journey
 
@@ -157,7 +157,7 @@ __Future Features__
 | Score validation | After all 10 questions have been answered, the team score is presented with feedback message based on success rate | PASS |
 | End of quiz menu | User can only input 1, 2 or 3 & trailing whitespaces removed. INVALID INPUT! is prompted & user is asked to input again | PASS |
 | New Quiz prompt | Retains team name & returns user to select a new difficulty level. User can only input 1, 2 or 3 & trailing whitespaces removed. INVALID INPUT! is prompted & user is asked to input again | PASS |
-| New Team prompt | Returns user to welcome message & input a new team name. User can only input 1, 2 or 3 & trailing whitespaces removed. INVALID INPUT! is prompted & user is asked to input again | PASS |
+| New Team prompt | Returns user to welcome message & input of new team name. User can only input 1, 2 or 3 & trailing whitespaces removed. INVALID INPUT! is prompted & user is asked to input again | PASS |
 | Exit prompt | User is exited from app, confirmed with goodbye feedback. User can only input 1, 2 or 3 & trailing whitespaces removed. INVALID INPUT! is prompted & user is asked to input again | PASS |
 
 ### Validator Testing 
@@ -178,13 +178,13 @@ __Future Features__
 
 ### Bugs Encountered
 
-- HTML fetched from the quiz question & answers API returns as unicode type:
-  - adding 'html.unescape()' cleans API HTML fetched and makes it more readable.
+- HTML fetched from the quiz question & answers API, returns as unicode type:
+  - adding 'html.unescape()' cleans API HTML loaded and makes it more readable.
 
 ![Unicode HTML](assets/images/unicode.webp)
 
 - During initial deployment 'ModuleNotFoundError' blocked app from running:
-  - requests import was not updating requirements.txt when running to the terminal
+  - requests import was not updating within requirements.txt when running to the terminal
   - numerous trial & errors with adding requests import and running pip3 freeze > requirements.txt to terminal
   - by manually adding 'requests==2.32.2' to requirements.txt file, it assisted Heroku with recognising the library and successfully deployed app for first phase of testing.
 
@@ -215,17 +215,17 @@ __Future Features__
   - Select 'Create new app'
   - Enter a unique application name - select appropriate region
   - Click 'Create app'
-  - One the following page, click the 'Settings' tab and scroll to Config Vars
+  - When loaded and redirected to next page, click the 'Settings' tab and scroll to Config Vars
   - In the KEY input field, enter 'PORT' and in the VALUE input field, enter '8000'
   - Click 'Add'
   - On the same page, scroll down to buildpacks and add two buildpacks
   - The ordering for these is heroku/python followed by heroku/nodejs
   - At the top of the page, click 'Deploy'
   - Select Github as the deployment method
-  - Search for and select correct repository and click 'Connect'
+  - Search for and select the correct repository and click 'Connect'
   - At the bottom of the same page, select either Automatic Deployment or Manual Deployment
   - Wait for your site to be deployed
-- The site was deployed to Heroku, the live link can be found here: https://risky-quizness-c9032af3d3e3.herokuapp.com/
+- The site was deployed to Heroku successfully, the live link can be found here: https://risky-quizness-c9032af3d3e3.herokuapp.com/
 
 ### Cloning of the Repository Code locally
 - The terminal function and template for the deployable application was provided by Code Institute
@@ -248,7 +248,7 @@ __Future Features__
 
 ## Credits 
 
-- Slack channel peers for their feedback with questions asked
-- My mentor for the support and knowledge shared to keeping prototype simple and clean
+- Slack channel peers for their feedback and support
+- My mentor for the support and knowledge shared, helping to keep this prototype simple and clean
 - Tutor Assist for the support with getting Heroku and Github version to communicate with app deployment
 
